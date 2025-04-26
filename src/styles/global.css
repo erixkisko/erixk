@@ -1,0 +1,228 @@
+@use postcss-preset-env(stage: 0);
+@custom-media --medium-width (width >= 40rem);
+@custom-media --large-width (width >= 60rem);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --theme-hue: 20;
+  /* --bg-light: hsl(var(--theme-hue), 50%, 90%); */
+  --bg-light: #8a2e60;
+  /* --bg-mid: hsl(var(--theme-hue), 70%, 70%); */
+  --bg-mid: #aa8b39;
+  /* --bg-primary: hsl(var(--theme-hue), 100%, 50%); */
+  --bg-primary: #256f5b;
+  --section-padding-v: 4rem;
+  --section-padding-h: 1.5rem;
+  --shadow-mid: 0.5rem 0.5rem 0 hsl(30, 20%, 30%);
+  --block-outline: 0.25rem solid var(--bg-primary);
+}
+
+body {
+  font-family: system-ui;
+  /* color: hsl(30, 10%, 10%); */
+  color: #fff;
+}
+
+.grid {
+  min-height: 100vh;
+  @media (--medium-width) {
+    --rows: 1fr 1fr;
+    --cols: 1fr 1fr;
+    display: grid;
+    grid-template-rows: var(--rows);
+    grid-template-columns: var(--cols);
+    grid-template-areas: "about contact" "about writing";
+  }
+  @media (--large-width) {
+    /*     --rows: 1fr 1.618fr; */
+    /*     --cols: 1.618fr 1fr; */
+  }
+}
+
+.grid > section {
+  padding-block: var(--section-padding-v);
+  padding-inline: var(--section-padding-h);
+  @media (--medium-width) {
+    --section-padding-v: var(--section-padding-h);
+  }
+}
+
+.about {
+  grid-area: about;
+  background-color: var(--bg-primary);
+  text-align: center;
+  @media (--medium-width) {
+    text-align: initial;
+  }
+}
+
+.about > .profile-img {
+  --size: 7.8125rem;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  margin-top: 1rem;
+  margin-bottom: calc(
+    ((var(--size) / 2) + var(--section-padding-v)) * -1
+  ); /* Half img height - padding*/
+  @media (--medium-width) {
+    margin-bottom: 0;
+  }
+  @media (--large-width) {
+    display: none;
+  }
+}
+
+.callout {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.writing.writing {
+  grid-area: writing;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+  overflow: hidden;
+  background-color: var(--bg-light);
+  @media (--large-width) {
+    text-align: right;
+  }
+}
+
+.writing-posts {
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  overflow-x: scroll;
+  @media (--large-width) {
+    margin-top: 0;
+    align-self: center;
+  }
+}
+
+.writing-post {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "heading" "summary" "footer";
+  gap: 0.5rem;
+  min-width: 12rem;
+  min-height: 10rem;
+  padding: 1rem;
+  background-color: #fff;
+  color: #000;
+  box-shadow: var(--shadow-mid);
+}
+
+.writing-post-footer {
+  justify-self: end;
+}
+
+.contact.contact {
+  grid-area: contact;
+  display: grid;
+  grid-template-areas: "title" "form";
+  gap: 1rem;
+  background-color: var(--bg-mid);
+  @media (--medium-width) {
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "title form";
+    gap: 1.5rem;
+  }
+  @media (--large-width) {
+    padding-bottom: 8rem;
+  }
+}
+
+.contact > h2 {
+  @media (--medium-width) {
+    grid-area: title;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    text-align: right;
+  }
+}
+
+.contact-form {
+  grid-area: form;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "name email email"
+    "message message submit"
+    "message message submit";
+}
+
+.contact-label {
+  display: grid;
+  grid-template-areas: "label" "input";
+  gap: 0.5rem;
+  font-weight: 600;
+  & > input,
+  & > textarea {
+    grid-area: input;
+    padding: 0.5rem;
+    box-shadow: var(--shadow-mid);
+    &:focus {
+      outline: var(--block-outline);
+    }
+  }
+}
+
+.contact-name {
+  grid-area: name;
+}
+
+.contact-email {
+  grid-area: email;
+}
+
+.contact-message {
+  grid-area: message;
+}
+
+.contact-submit {
+  grid-area: submit;
+  align-self: end;
+}
+
+.profile-img {
+  border-radius: 50%;
+  display: none;
+  @media (--large-width) {
+    display: block;
+    grid-area: 2 / 2 / 3 / 3;
+    transform: translate(-50%, -50%);
+  }
+}
+
+h2 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+button,
+input,
+textarea {
+  display: block;
+  width: 100%;
+  background-color: hsl(30, 10%, 98%);
+  border: 0;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:focus {
+    outline: var(--block-outline);
+  }
+}

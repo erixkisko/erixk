@@ -10,5 +10,11 @@
   },
   "dependencies": {
     "astro": "^5.7.4"
+  },
+  "devDependencies": {
+    "@types/postcss-preset-env": "^8.0.0",
+    "postcss": "^8.5.3",
+    "postcss-preset-env": "^10.1.6",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
