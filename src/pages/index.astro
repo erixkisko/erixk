@@ -1,6 +1,8 @@
 ---
+import Form from "../components/Form.astro";
+import Header from "../components/Header.astro";
+import PostBox from "../components/PostBox.astro";
 import "../styles/global.css";
-
 const pageTitle = "Home";
 const identity = {
   firstName: "Eriks",
@@ -20,30 +22,11 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
     <title>{pageTitle}</title>
   </head>
   <body>
+    <Header />
     <main class="grid">
       <section class="about">
         <h1>{pageTitle}</h1>
         <p>Hey what's up?</p>
-        <p>Buy me a horse</p>
-        <p>PLEASEEEEEEEEE!</p>
-        <!-- <ul>
-          <li>My name is {identity.firstName}.</li>
-          <li>
-            I live in {identity.country} and I work as a {identity.occupation}.
-          </li>
-          {
-            identity.hobbies.length >= 2 && (
-              <li>
-                Two of my hobbies are: {identity.hobbies[0]} and{" "}
-                {identity.hobbies[1]}
-              </li>
-            )
-          }
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-          {skills.map((skill) => <li>{skill}</li>)}
-        </ul> -->
         <!-- <img
           class="profile-img"
           src="https://github.com/oliverjam.png"
@@ -55,73 +38,42 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
         <h2>Writing</h2>
         <div class="writing-posts">
           <a href="/posts/post-1">
-            <article class="writing-post">
-              <h3>A nice post</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio, quasi.
-              </p>
-              <footer class="writing-post-footer">
-                <time datetime="2019-01-12"><small>3 days ago</small></time>
-              </footer>
-            </article>
+            <PostBox
+              title="A nice post"
+              description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, assumenda!"
+              date="2018-11-28"
+            />
           </a>
           <a href="/posts/post-2">
-            <article class="writing-post">
-              <h3>A nice post with a much longer headline</h3>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Assumenda, nulla.
-              </p>
-              <footer class="writing-post-footer">
-                <time datetime="2018-01-10"><small>1 month ago</small></time>
-              </footer>
-            </article>
+            <PostBox
+              title="A nice post"
+              description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, assumenda!"
+              date="2018-11-28"
+            />
           </a>
           <a href="/posts/post-3">
-            <article class="writing-post">
-              <h3>A nice post</h3>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Corrupti, assumenda!
-              </p>
-              <footer class="writing-post-footer">
-                <time datetime="2018-11-28"><small>2 months ago</small></time>
-              </footer>
-            </article>
+            <PostBox
+              title="A nice post"
+              description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, assumenda!"
+              date="2018-11-28"
+            />
           </a>
         </div>
       </section>
       <section class="contact">
         <h2>Get In Touch</h2>
-        <form
-          class="contact-form"
-          action="mailto:erixk2807@gmail.com"
-          method="POST"
-          enctype="text/plain"
-        >
-          <label class="contact-label contact-name"
-            >Name
-            <input type="text" name="name" required />
-          </label>
-          <label class="contact-label contact-email"
-            >Email
-            <input class="contact-email" type="email" name="email" required />
-          </label>
-          <label class="contact-label contact-message"
-            >Message
-            <textarea class="contact-message" name="message" rows="5" required
-            ></textarea>
-          </label>
-          <button class="contact-submit" type="submit">↪️</button>
-        </form>
+        <Form />
       </section>
-      <!-- <img
+    </main>
+
+    <!-- <img
         class="profile-img"
         src="https://github.com/oliverjam.png"
         width="150"
         height="150"
       /> -->
-    </main>
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </body>
 </html>

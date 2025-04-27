@@ -14,18 +14,89 @@
   /* --bg-mid: hsl(var(--theme-hue), 70%, 70%); */
   --bg-mid: #aa8b39;
   /* --bg-primary: hsl(var(--theme-hue), 100%, 50%); */
-  --bg-primary: #256f5b;
+  --bg-primary: #246f5a;
+  --bg-complementary: #480027;
+  --white: #faf9f9;
   --section-padding-v: 4rem;
   --section-padding-h: 1.5rem;
-  --shadow-mid: 0.5rem 0.5rem 0 hsl(30, 20%, 30%);
+  /* --shadow-mid: 0.5rem 0.5rem 0 hsl(30, 20%, 30%); */
+  --shadow-mid: 0.5rem 0.5rem 0 #480027;
   --block-outline: 0.25rem solid var(--bg-primary);
 }
 
 body {
   font-family: system-ui;
   /* color: hsl(30, 10%, 10%); */
-  color: #fff;
+  color: #faf9f9;
 }
+
+nav {
+  /* height: 75px; */
+}
+
+/* .hamburger {
+  position: absolute;
+  cursor: pointer;
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+}
+
+.hamburger .line {
+  width: 40px;
+  height: 5px;
+  background-color: #ff9776;
+} */
+
+.nav-links {
+  width: 100%;
+  top: 5rem;
+  /* left: 48px; */
+  display: none;
+  margin: 0;
+  color: black;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: var(--bg-complementary);
+  color: var(--white);
+}
+/* 
+.expanded {
+  display: unset;
+} */
+/* 
+.nav-link {
+  background-color: #ff9776;
+} */
+
+.nav-links {
+  margin-left: var(--section-padding-w);
+  display: block;
+  position: static;
+  width: auto;
+  background: none;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 15px 20px;
+}
+/* 
+.hamburger {
+  display: none;
+} */
 
 .grid {
   min-height: 100vh;
@@ -54,7 +125,7 @@ body {
 .about {
   grid-area: about;
   background-color: var(--bg-primary);
-  text-align: center;
+  /* text-align: center; */
   @media (--medium-width) {
     text-align: initial;
   }
@@ -115,7 +186,7 @@ body {
   min-width: 12rem;
   min-height: 10rem;
   padding: 1rem;
-  background-color: #fff;
+  background-color: var(--white);
   color: #000;
   box-shadow: var(--shadow-mid);
 }
@@ -212,7 +283,7 @@ input,
 textarea {
   display: block;
   width: 100%;
-  background-color: hsl(30, 10%, 98%);
+  background-color: var(--white);
   border: 0;
   font-size: inherit;
   font-family: inherit;
@@ -223,6 +294,6 @@ a {
   text-decoration: none;
   color: inherit;
   &:focus {
-    outline: var(--block-outline);
+    outline: 2px solid var(--block-outline);
   }
 }

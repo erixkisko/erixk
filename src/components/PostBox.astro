@@ -1,0 +1,11 @@
+---
+const { title, description, date } = Astro.props;
+---
+
+<article class="writing-post">
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <footer class="writing-post-footer">
+    <time datetime={date}><small>{date}</small></time>
+  </footer>
+</article>
