@@ -4,6 +4,7 @@ import postcssPresetEnv from "postcss-preset-env";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://erixk.com/",
   vite: {
     css: {
       postcss: {
