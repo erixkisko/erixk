@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.4"
+    "astro": "^5.7.10"
   },
   "devDependencies": {
     "@types/postcss-preset-env": "^8.0.0",
