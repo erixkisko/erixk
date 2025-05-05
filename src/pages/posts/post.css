@@ -1,0 +1,136 @@
+.post-content {
+  max-width: 80ch;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.post-content h1 {
+  font-size: var(--text-size-400);
+  font-family: var(--font-bold);
+  margin-bottom: var(--spacing-200);
+}
+
+.post-content h2 {
+  font-size: var(--text-size-300);
+  font-family: var(--font-bold);
+  margin: var(--spacing-300) 0 var(--spacing-100);
+}
+
+.post-content h3 {
+  font-size: var(--text-size-200);
+  font-family: var(--font-bold);
+  margin: var(--spacing-200) 0 var(--spacing-100);
+}
+
+.post-content p {
+  margin-bottom: var(--spacing-100);
+}
+
+.post-content a {
+  color: var(--white);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.post-content a:hover,
+.post-content a:focus {
+  color: var(--bg-complementary);
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  margin: var(--spacing-200) 0;
+  border-radius: 4px;
+  box-shadow: var(--shadow-mid);
+  display: block;
+}
+
+.post-content figure {
+  margin: var(--spacing-200) 0;
+  text-align: center;
+}
+
+.post-content figure img {
+  margin: 0 auto;
+}
+
+.post-content figure figcaption {
+  margin-top: var(--spacing-90);
+  font-size: var(--text-size-100);
+  color: var(--white);
+  opacity: 0.8;
+}
+
+.post-content blockquote {
+  border-left: 4px solid var(--bg-complementary);
+  padding-left: var(--spacing-200);
+  margin: var(--spacing-200) 0;
+  font-style: italic;
+}
+
+.post-content pre {
+  background-color: var(--bg-mid);
+  padding: var(--spacing-200);
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: var(--spacing-200) 0;
+}
+
+.post-content code {
+  font-family: monospace;
+  background-color: var(--bg-mid);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.post-content ul,
+.post-content ol {
+  margin: var(--spacing-200) 0;
+  padding-left: var(--spacing-300);
+}
+
+.post-content li {
+  margin-bottom: var(--spacing-90);
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-90);
+}
+
+.post-tag {
+  background-color: var(--bg-mid);
+  color: var(--white);
+  padding: var(--spacing-90) var(--spacing-100);
+  border-radius: 4px;
+  font-size: var(--text-size-100);
+  font-family: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.post-meta {
+  display: grid;
+  gap: var(--spacing-80);
+  .h1 {
+    margin-bottom: 0;
+  }
+}
+
+.post-date {
+  font-family: var(--font-bold);
+}
+
+@media (--medium-width) {
+  .post-content {
+    padding: var(--spacing-400);
+  }
+}
+
+@media (--large-width) {
+  .post-content {
+    padding: var(--spacing-500);
+  }
+}

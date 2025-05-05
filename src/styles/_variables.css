@@ -1,0 +1,34 @@
+@import "./_fonts.css";
+:root {
+  --font-base: "Ubuntu", sans-serif;
+  --font-bold: "Ubuntu-Bold", sans-serif;
+
+  --white: #faf9f9;
+  --bg-light: #8a2e60;
+  --bg-mid: #aa8b39;
+  --bg-primary: #246f5a;
+  --bg-complementary: #480027;
+  --shadow-mid: 0.5rem 0.5rem 0 #480027;
+
+  --block-outline: 0.25rem solid var(--bg-primary);
+  --section-padding-v: 4rem;
+  --section-padding-h: 1.5rem;
+
+  --text-size-100: 16px;
+  --text-size-200: 24px;
+  --text-size-300: 32px;
+  --text-size-400: 48px;
+  --icon-size-100: 16px;
+  --icon-size-200: 32px;
+  --icon-size-300: 64px;
+  --icon-size-400: 128px;
+  --spacing-80: 4px;
+  --spacing-90: 8px;
+  --spacing-100: 16px;
+  --spacing-200: 32px;
+  --spacing-300: 64px;
+  --spacing-400: 128px;
+  --spacing-500: 256px;
+  --tablet-width: 768px;
+  --desktop-width: 1024px;
+}

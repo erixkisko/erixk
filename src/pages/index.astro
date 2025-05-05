@@ -1,9 +1,12 @@
 ---
+import { getCollection } from "astro:content";
 import Form from "../components/Form.astro";
-import PostBox from "../components/PostBox.astro";
+import PostsWrapper from "../components/PostsWrapper.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 const pageTitle = "Home";
+
+const allPosts = await getCollection("blog");
 const identity = {
   firstName: "Eriks",
   country: "Latvia",
@@ -14,53 +17,27 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
 
 <BaseLayout pageTitle="Home Page">
-  <main class="grid">
+  <div class="grid">
     <section class="about">
-      <h1>{pageTitle}</h1>
+      <h1 class="h1">{pageTitle}</h1>
       <p>Hey what's up?</p>
-      <!-- <img
-          class="profile-img"
-          src="https://github.com/oliverjam.png"
-          width="250"
-          height="250"
-        /> -->
+      <img
+        class="profile-img"
+        src="https://avatars.githubusercontent.com/u/62183555?v=4"
+      />
     </section>
     <section class="writing">
-      <h2>Writing</h2>
-      <div class="writing-posts">
-        <a href="/posts/post-1">
-          <PostBox
-            title="A nice post"
-            description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, assumenda!"
-            date="2018-11-28"
-          />
-        </a>
-        <a href="/posts/post-2">
-          <PostBox
-            title="A nice post"
-            description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, assumenda!"
-            date="2018-11-28"
-          />
-        </a>
-        <a href="/posts/post-3">
-          <PostBox
-            title="A nice post"
-            description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, assumenda!"
-            date="2018-11-28"
-          />
-        </a>
-      </div>
+      <h2 class="h2">Writing</h2>
+      <PostsWrapper allPosts={allPosts} />
     </section>
     <section class="contact">
-      <h2>Get In Touch</h2>
+      <h3 class="h2 contact-heading">Get In Touch</h3>
       <Form />
     </section>
-  </main>
-
-  <!-- <img
-        class="profile-img"
-        src="https://github.com/oliverjam.png"
-        width="150"
-        height="150"
-      /> -->
+    <img
+      class="profile-img"
+      src="https://avatars.githubusercontent.com/u/62183555?v=4"
+      alt="My profile picture"
+    />
+  </div>
 </BaseLayout>

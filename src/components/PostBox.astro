@@ -1,11 +1,14 @@
 ---
 const { title, description, date } = Astro.props;
+const pubDate = new Date(date);
 ---
 
-<article class="writing-post">
-  <h3>{title}</h3>
-  <p>{description}</p>
-  <footer class="writing-post-footer">
-    <time datetime={date}><small>{date}</small></time>
+<article class="post">
+  <h3 class="post-title">{title}</h3>
+  <p class="post-description">{description}</p>
+  <footer class="date">
+    <time datetime={pubDate.toISOString()}
+      ><small>{pubDate.toLocaleDateString()}</small></time
+    >
   </footer>
 </article>

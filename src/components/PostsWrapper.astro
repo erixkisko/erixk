@@ -1,0 +1,18 @@
+---
+import PostBox from "./PostBox.astro";
+const { allPosts, isColumn } = Astro.props;
+---
+
+<div class:list={["posts", { column: isColumn }]}>
+  {
+    allPosts.map((post: any) => (
+      <a href={`/posts/${post.id}/`} class="post-link ">
+        <PostBox
+          title={post.data.title}
+          description={post.data.description}
+          date={post.data.pubDate}
+        />
+      </a>
+    ))
+  }
+</div>
