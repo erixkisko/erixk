@@ -12,21 +12,19 @@ body {
 
 main {
   background-color: var(--bg-light);
-  /* padding-bottom: var(--spacing-500); */
+  width: 100%;
 }
 
 .container {
-  margin: 0 var(--spacing-300);
+  width: 100%;
+  margin: 0 auto;
   background-color: var(--bg-light);
   color: var(--white);
-  padding: var(--spacing-300) var(--spacing-200);
-  padding-bottom: var(--spacing-500);
+  padding: var(--spacing-300) var(--spacing-200) var(--spacing-400);
   height: auto;
   min-height: 100vh;
   @media (--large-width) {
-    width: 80%;
     max-width: 80ch;
-    margin: 0 auto;
   }
 }
 
